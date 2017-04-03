@@ -1,0 +1,25 @@
+Matlab Function
+% This feature is created by applying the formula:
+% Ihirte = (x,y) = a * IRGB(x,y,1) + ß * IRGb(x,y,2) + ? * IRGB(x,y,3)
+
+                  %   I-is original Image
+                  %   L-is alpfa,that is test value
+                  %   B-is beta,that is test value
+                  %   Y-is gama,that is test value
+% HI-is implemetation of formula for detyra_1
+%Function Code
+
+function y = det1(I,L,B,Y)
+HI=uint8(zeros(size(I,1),size(I,2)));
+    for i=1:size(I,1)
+          for j=1:size(I,2)
+              HI(i,j)=L*I(i,j,1)+B*I(i,j,2)+Y*I(i,j,3);
+          end
+    end
+ imshow(I),figure,imshow(HI);
+
+Testing code in Figure I: baboon.jpg, and by using data values of a, ß, and ?.
+Read the image:
+I = imread ('baboon.jpg');	
+In the second step of the function in thirrim ja we have left det1 name, and give values of a, ß, ? AND.
+det1 (I, 0.2989,0.5870,0.1141);
